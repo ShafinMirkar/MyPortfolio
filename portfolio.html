@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPortfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(252, 249, 244);
+            color: black;
+            
+            font-family: "Roboto", sans-serif; 
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        h2{
+            font-size: 8vh;
+            font-weight: 400;
+
+        }
+        li{
+            list-style-type: none;
+        }
+        p{
+            word-spacing: 5px;
+        }
+        .nav-bar{
+            font-weight: 400;
+            font-size: larger;
+            height: auto;
+            width: 100vw;
+            padding: 1em;
+            background-color:rgb(252, 249, 244);
+        }
+        #logo{
+            font-size: 3vw;
+            font-weight: 600;
+            margin-left: 0;
+        }
+        .nav-list{
+            display: flex;
+            align-items: center;
+        }        
+        #content{
+            margin-left: 40vw;
+        }
+        .in-list{
+            position: relative;
+            display:inline;
+            margin-left: 2.5em;
+        }
+        .in-list::after{
+            position: absolute;
+            content: "";
+            background-color:black;
+            height: 2px;
+            width: 0;
+            bottom: 0;
+            left: 0;
+            transition: 500ms;
+        }
+        .in-list:hover::after{
+            width: 100%;
+        }
+        main{
+            margin-left: 3vw;
+            margin-right:3vw;
+        }
+        .m-container{
+            width: auto;
+            height: 103vh;
+            margin-top: 7vh;
+            background-color: rgb(252, 249, 244);
+            display: flex;
+        }
+        .m-name{
+            width: 70%;
+            align-self: end;
+            font-size: 16vw;
+            background-color: rgb(252, 249, 244);
+            line-height: 90%;
+        }
+        .m-photo{
+            background-color: rgb(252, 249, 244);
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        .pic{
+            height: 100%;
+        }
+        .pic img{
+            height: 60vh;
+            width: auto;
+            opacity: 95%;
+            margin-top: 20px;
+            border-radius: 1.7rem;
+            justify-self: flex-start;
+        }
+        .text{
+            font-size: x-large;
+            justify-self: flex-end;
+            align-self: flex-end;
+            margin-right: 50px;
+            margin-bottom: 30px;
+        }
+        .projects{
+            font-size: 3vw;
+            font-weight: 300;
+            margin-top: 25vh;
+            margin-bottom: 15vh;
+        }
+        .my_portfolio{
+            margin-top: 4vh;
+            padding: 10px;
+        }
+        .projects span{
+            font-weight: 300;
+        }
+
+        .projects p,.projects a{
+            font-size: 2vw;
+            color: rgb(99, 99, 98);
+            
+        }
+        .projects a{
+            text-decoration: underline;
+        }
+        .guess_num{
+            margin-top: 3vh;
+            padding: 10px;
+        }
+        .my_portfolio:hover{
+            background-color: rgb(234, 220, 204);
+        }
+        .guess_num:hover{
+            background-color: rgb(234, 220, 204);
+        }
+        .skills{
+            display: flex;
+            height: 90vh;
+            margin-bottom: 15vh;
+        }
+        .skill_text{
+            width: 40vw;
+            line-height: 2;
+        }
+        .boxes{ 
+            width: 60vw;
+            padding: 100px 30px ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10%;
+        }
+        .box{
+            height: 40%;
+            width: 30%;
+            font-size: 3vw;
+            font-weight: 400;
+            background-color: #fdf7f7;
+            border: 1px solid rgb(79, 78, 78);
+            border-radius: 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;    
+        }
+        .box:hover{
+            background-color: rgba(16, 15, 15, 0.913);
+            color: antiquewhite;
+            transform: scale(1.1001);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 0px 10px rgb(35, 35, 35, 0.5);
+        }
+        .skill_text{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .skill_text p{
+            font-size: xx-large;
+            line-height: 6.4vh;
+        }
+        .achieve{
+            font-size: 5vw;
+            font-weight: 300;
+            margin-top: 10vh;
+            margin-bottom: 25vh;
+        }
+        .my-achieve{
+            margin-bottom: 10vh;
+        }
+        .my-achieve span{
+            font-weight: 400;
+        }
+        .data{
+            font-size: 2vw;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5vh;
+        }
+        .data span{
+            font-size: 7vh;
+            font-weight: 700;
+        }
+        .info{
+            width: 40%;
+        }
+        .foot{
+            color: antiquewhite;
+            height: 40vh;
+            background-color: rgba(16, 15, 15, 0.913);
+            box-shadow: 0px 0px 10px rgb(35, 35, 35, 0.5);
+        }
+        .foot h2{
+            padding-left: 3vw;
+            font-size: 4vw;
+        }
+        .links , .links a{
+            color: antiquewhite;
+            font-size: 2vw;
+        }
+        .links a{
+            text-decoration: underline;
+        }
+        .links a:hover{
+            color: darkgray;
+        }
+        .connect{
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-bar">
+                <ul class="nav-list">
+                    <li id="logo"><a href="#" >Shafin Works</a></li>
+                    <li id="content">
+                        <ul class="content">
+                            <li class="in-list"><a href="#projects">Projects</a></li>
+                            <li class="in-list"><a href="#skills">Skills</a></li>
+                            <li class="in-list"><a href="#achievements">Achievements</a></li>
+                            <li class="in-list"><a href="#contact">Contact</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section >
+            <div class="m-container">
+            <div class="m-name">
+                <span>Shafin</span>
+                <span>Mirkar</span>
+            </div>
+            <div class="m-photo">
+                <div class="pic">
+                    <img  src="Shafin_linkedIn Photo.jpg" alt="">
+                </div>
+                <div class="text">
+                    <ul>
+                        <li>- Developer</li>
+                        <li>- Problem solver</li>
+                        <li>- Expressive</li>
+                        <li>- Inquisitive person</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <section id="projects">
+            <div class="projects">
+                <h2>My Projects</h2>
+                <div class="my_portfolio">
+                    <span>My Portfolio</span>
+                    <p>I created this website using HTML and CSS, which I really enjoyed making. I have many ideas for improvements that I plan to implement as I continue developing my skills.</p>
+                    <a href="#">click here</a>
+                </div>
+                <div class="guess_num">
+                    <span>Guess Number</span>
+                    <p>I created this project to practice my JavaScript fundamentals and improve my logic-building skills. I learned concepts like event listeners and DOM manipulation, and applied them in the project.</p>
+                    <a href="">click here</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="skills">
+                <div class="skill_text">
+                    <h2>Skills</h2>
+                    <p>I began learning DSA in the first semester of my engineering. <br>
+                        I enjoy solving complex problems and exploring new concepts.<br><br>
+                        I started web development in my second semester, working my way through HTML, CSS and JavaScript.
+                         </p>
+                </div>
+                <div class="boxes">
+                    <div class="box">C++</div>
+                    <div class="box">HTML CSS</div>
+                    <div class="box">Javascript</div>
+                    <div class="box">Python</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <div class="achieve">
+                <div class="my-achieve">Look  ,  these  are  some  of  my  <span>Achievements</span></div>
+                <div class="data">
+                    <div class="info">
+                        <span>97.3</span>
+                        <p>percentile in CET</p>
+                    </div>
+                    <div class="info">
+                        <span>94.8</span>
+                    <p>percentile in JEE</p>
+                    </div>
+                    <div class="info">
+                        <span>30+</span>
+                    <p>questions solved on LeetCode</p>
+                    </div>
+                    <div class="info">
+                        <span>6th</span>
+                    <p>place in Newbiethon amongst 31 teams</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer >
+        <div id="contact" class="foot">
+            <h2>Let's Connect!</h2>
+            <br><br>
+            <hr>
+            <br><br>
+            <ul class="connect">
+                <li class="links">shafinmirkar2@gmail.com</li>
+                <li class="links"><a href="https://www.linkedin.com/in/shafin-mirkar-7a1ba0330/">Linked In</a></li>
+                <li class="links"><a href="https://leetcode.com/u/Shafin_Mirkar/">Leet Code</a></li>
+                <li class="links"><a href="https://github.com/ShafinMirkar">Git Hub</a></li>
+            </ul>
+        </div>
+
+    </footer>
+</body>
+</html>
